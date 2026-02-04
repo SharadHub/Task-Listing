@@ -58,3 +58,55 @@ button:hover{
 button:after{
     color: grey;
 }
+
+/* Task item layout - make it flex so checkbox | text | delete are nicely spaced */
+#task-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    margin: 8px 0;
+    background: #f9f9f9;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    list-style: none;          /* remove default bullet from ol */
+}
+
+/* Checkbox styling */
+#task-list input[type="checkbox"] {
+    margin-right: 12px;
+    width: 18px;
+    height: 18px;
+    accent-color: #4CAF50;
+    cursor: pointer;
+}
+
+/* Strikethrough when checked - red color */
+#task-list li.completed label,
+#task-list li.completed span.task-text {
+    text-decoration: line-through;
+    color: #e74c3c;           /* red */
+    opacity: 0.7;
+}
+
+/* Delete button/icon */
+.delete-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.delete-btn:hover {
+    background: #c0392b;
+}
+
+/* Optional: make text take available space */
+.task-text {
+    flex: 1;
+    word-break: break-word;
+}
